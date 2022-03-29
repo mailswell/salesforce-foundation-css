@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="color-scheme" content="light dark">
+   <meta name="supported-color-schemes" content="light dark">
+	<title>Salesforce Template 1</title>
+</head>
+<body>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+   table {
+      border-spacing: 0;
+      font-family: 'Poppins', sans-serif;
+   }
+   td {
+      padding: 0;
+   }
+   p {
+      font-size: 15px;
+   }
+   img {
+      border: 0;
+   }
+   a {
+      text-decoration: none;
+      color: #e8fbfa;
+      font-size: 16px;
+   }
+   .content {
+      line-height: 20px;
+      font-size: 15px;
+   }
+
+   p.next-line {
+   width: 300px;
+   white-space: normal;
+   word-break: break-word;
+   }
+   h4.studio-break {
+   padding-left: 15px;
+   padding-right: 15px;
+   }
+   span.wrap-break {
+   display: block;
+   }
+    @media only screen {
+      html {
+        min-height: 100%;
+        background: #f3f3f3;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+
+      p.next-line {
+         width: auto;
+         white-space: normal;
+         word-break: break-word;
+      }
+      span.wrap-break {
+         display: inline;
+      }
+
+      .small-float-center {
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center !important;
+      }
+      .small-text-center {
+        text-align: center !important;
+      }
+      .small-text-left {
+        text-align: left !important;
+      }
+      .small-text-right {
+        text-align: right !important;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+      .hide-for-large {
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        max-height: none !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+      table.body table.container .hide-for-large,
+      table.body table.container .row.hide-for-large {
+        display: table !important;
+        width: 100% !important;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+      table.body table.container .callout-inner.hide-for-large {
+        display: table-cell !important;
+        width: 100% !important;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+      table.body table.container .show-for-large {
+        display: none !important;
+        width: 0;
+        mso-hide: all;
+        overflow: hidden;
+      }
+    }
+    
+    @media only screen and (max-width: 596px) {
+      table.body img {
+        width: auto;
+        height: auto;
+      }
+      table.body center {
+        min-width: 0 !important;
+      }
+      table.body .container {
+        width: 95% !important;
+      }
+      table.body .columns,
+      table.body .column {
+        height: auto !important;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      table.body .columns .column,
+      table.body .columns .columns,
+      table.body .column .column,
+      table.body .column .columns {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      table.body .collapse .columns,
+      table.body .collapse .column {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      td.small-1,
+      th.small-1 {
+        display: inline-block !important;
+        width: 8.33333% !important;
+      }
+      td.small-2,
+      th.small-2 {
+        display: inline-block !important;
+        width: 16.66667% !important;
+      }
+      td.small-3,
+      th.small-3 {
+        display: inline-block !important;
+        width: 25% !important;
+      }
+      td.small-4,
+      th.small-4 {
+        display: inline-block !important;
+        width: 33.33333% !important;
+      }
+      td.small-5,
+      th.small-5 {
+        display: inline-block !important;
+        width: 41.66667% !important;
+      }
+      td.small-6,
+      th.small-6 {
+        display: inline-block !important;
+        width: 50% !important;
+      }
+      td.small-7,
+      th.small-7 {
+        display: inline-block !important;
+        width: 58.33333% !important;
+      }
+      td.small-8,
+      th.small-8 {
+        display: inline-block !important;
+        width: 66.66667% !important;
+      }
+      td.small-9,
+      th.small-9 {
+        display: inline-block !important;
+        width: 75% !important;
+      }
+      td.small-10,
+      th.small-10 {
+        display: inline-block !important;
+        width: 83.33333% !important;
+      }
+      td.small-11,
+      th.small-11 {
+        display: inline-block !important;
+        width: 91.66667% !important;
+      }
+      td.small-12,
+      th.small-12 {
+        display: inline-block !important;
+        width: 100% !important;
+      }
+      .columns td.small-12,
+      .column td.small-12,
+      .columns th.small-12,
+      .column th.small-12 {
+        display: block !important;
+        width: 100% !important;
+      }
+      table.body td.small-offset-1,
+      table.body th.small-offset-1 {
+        margin-left: 8.33333% !important;
+        Margin-left: 8.33333% !important;
+      }
+      table.body td.small-offset-2,
+      table.body th.small-offset-2 {
+        margin-left: 16.66667% !important;
+        Margin-left: 16.66667% !important;
+      }
+      table.body td.small-offset-3,
+      table.body th.small-offset-3 {
+        margin-left: 25% !important;
+        Margin-left: 25% !important;
+      }
+      table.body td.small-offset-4,
+      table.body th.small-offset-4 {
+        margin-left: 33.33333% !important;
+        Margin-left: 33.33333% !important;
+      }
+      table.body td.small-offset-5,
+      table.body th.small-offset-5 {
+        margin-left: 41.66667% !important;
+        Margin-left: 41.66667% !important;
+      }
+      table.body td.small-offset-6,
+      table.body th.small-offset-6 {
+        margin-left: 50% !important;
+        Margin-left: 50% !important;
+      }
+      table.body td.small-offset-7,
+      table.body th.small-offset-7 {
+        margin-left: 58.33333% !important;
+        Margin-left: 58.33333% !important;
+      }
+      table.body td.small-offset-8,
+      table.body th.small-offset-8 {
+        margin-left: 66.66667% !important;
+        Margin-left: 66.66667% !important;
+      }
+      table.body td.small-offset-9,
+      table.body th.small-offset-9 {
+        margin-left: 75% !important;
+        Margin-left: 75% !important;
+      }
+      table.body td.small-offset-10,
+      table.body th.small-offset-10 {
+        margin-left: 83.33333% !important;
+        Margin-left: 83.33333% !important;
+      }
+      table.body td.small-offset-11,
+      table.body th.small-offset-11 {
+        margin-left: 91.66667% !important;
+        Margin-left: 91.66667% !important;
+      }
+      table.body table.columns td.expander,
+      table.body table.columns th.expander {
+        display: none !important;
+      }
+      table.body .right-text-pad,
+      table.body .text-pad-right {
+        padding-left: 10px !important;
+      }
+      table.body .left-text-pad,
+      table.body .text-pad-left {
+        padding-right: 10px !important;
+      }
+      table.menu {
+        width: 100% !important;
+      }
+      table.menu td,
+      table.menu th {
+        width: auto !important;
+        display: inline-block !important;
+      }
+      table.menu.vertical td,
+      table.menu.vertical th,
+      table.menu.small-vertical td,
+      table.menu.small-vertical th {
+        display: block !important;
+      }
+      table.menu[align="center"] {
+        width: auto !important;
+      }
+      table.button.small-expand,
+      table.button.small-expanded {
+        width: 100% !important;
+      }
+      table.button.small-expand table,
+      table.button.small-expanded table {
+        width: 100%;
+      }
+      table.button.small-expand table a,
+      table.button.small-expanded table a {
+        text-align: center !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      table.button.small-expand center,
+      table.button.small-expanded center {
+        min-width: 0;
+      }
+    }
+    /* Custom Dark Mode Colors *
+   :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+   }
+   @media (prefers-color-scheme: dark) {
+      body, center, table, .darkmode-bg {
+         background: #2d2d2d!important;
+         color: #ffffff!important;
+      }
+      .darkmode-transparent {
+         background-color: transparent!important;
+      }
+   }*/
+  </style>
+  <table class="body" data-made-with-foundation="" style="Margin: 0; background: #f3f3f3; border-collapse: collapse; border-spacing: 0; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; height: 100%; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+    <tbody>
+      <tr style="padding: 0; text-align: left; vertical-align: top;">
+        <td class="float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; word-wrap: break-word;"
+          valign="top" align="center">
+          <center data-parsed="" style="min-width: 620px; width: 100%;">
+
+            <table class="container" style="Margin: 0 auto; Margin-bottom: 60px; background: #fefefe; border-collapse: collapse; border-spacing: 0; box-shadow: 0 0 15px rgba(0,0,0,.2); margin: 0 auto; padding: 0; text-align: inherit; vertical-align: top; width: 620px;"
+              bgcolor="#ffffff" align="center">
+              <tbody>
+                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                    <!-- Row with Explanation -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#dddddd">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: normal; hyphens: auto; line-height: 24px; margin: 0; padding: 12px 6px 16px 6px; text-align: center; vertical-align: top; word-wrap: break-word;"
+                            class="text-center">Salesforce themed design using the Foundation for email CSS Framework. I made the PSD with images/text from Salesforce.com. The images are not online, dark mode isn't enabled.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Row with Big Banner Text -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 5px 0 5px 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <center data-parsed="" style="min-width: 620px; width: 100%;"><a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="salesforce-logo.jpg" alt="" class="text-center" style="-ms-interpolation-mode: bicubic; Margin: 0 auto; border: none; clear: both; display: block; float: none; margin: 0 auto; max-width: 250px; outline: none; text-align: center; text-decoration: none; width: auto;" "="" align="middle"></a></center>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Row with Big Banner Text -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#D6E8FC">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 15px 15px 10px 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <h2 class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center; word-wrap: normal;">Every moment counts. Your data has to keep up. With digital marketing software from Salesforce, it can.</h2>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Row with Text/Button Left &amp; IMG Right -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#D6E8FC">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <!-- Start Column -->
+                          <td class="small-12 large-6 columns first" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; padding-bottom: 16px; padding-left: 16px; padding-right: 0 !important; text-align: left; vertical-align: top; width: 274px; word-wrap: break-word;">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left; word-wrap: normal;">Put your customer first.</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Inspire action and loyalty.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left; word-wrap: normal;">Get a 360-degree view.</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Engage your customer base.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left; word-wrap: normal;">Fast, flexible &amp;amp; scalable.</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-left next-line" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Move at the speed of your customers, in real time.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 24px 20px 20px 20px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <table class="button radius" style="Margin: 0 0 16px 0; border-collapse: collapse; border-spacing: 0; margin: 0 0 16px 0; padding: 0; text-align: left; vertical-align: top; width: auto;">
+                                      <tbody>
+                                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                              <tbody>
+                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; background: #2199e8; background-color: #0A5BAC !important; border: none; border-collapse: collapse !important; border-radius: 3px; color: #fefefe; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 4px 8px 4px 8px; text-align: left; vertical-align: top; word-wrap: break-word;"><a href="https://example.com" style="Margin: 0; border: 0 solid #2199e8; border-radius: 3px; color: #fefefe; display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; padding: 8px 16px 8px 16px; text-align: left; text-decoration: none;">LEARN MORE</a></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <!-- Start Column -->
+                          <td class="small-12 large-6 columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; padding-bottom: 16px; padding-left: 0 !important; padding-right: 8px; text-align: left; vertical-align: top; width: 274px; word-wrap: break-word;">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center data-parsed="" style="min-width: 242px; width: 100%;"> <img src="phone.png" alt="" class="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;" height="" align="middle"></center>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Row -->
+
+                    <!-- Spacer -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: normal; hyphens: auto; line-height: 36px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="36px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Row with Three Columns -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+
+                          <!-- Start Column -->
+                          <td class="small-12 large-4 columns first" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 20px 25px 20px 25px; padding-bottom: 16px; padding-left: 16px; padding-right: 8px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;"
+                            bgcolor="#ffffff">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center data-parsed="" style="min-width: 145.33333px; width: 100%;"><img src="email-studio.png" alt="" class="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;" height="100px" align="middle"></center>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-center studio-break" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center; word-wrap: normal;">SFMC Email Studio</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-bottom: 10px; padding-top: 2px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center;">The tools you<span class="wrap-break"></span> need to stand<span class="wrap-break"></span> out in the inbox.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center style="min-width: 145.33333px; width: 100%;">
+                                      <table class="button radius" style="Margin: 0 0 16px 0; border-collapse: collapse; border-spacing: 0; margin: 0 0 16px 0; padding: 0; text-align: left; vertical-align: top; width: auto;">
+                                        <tbody>
+                                          <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                            <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                              <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                                <tbody>
+                                                  <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; background: #2199e8; background-color: #0A5BAC !important; border: none; border-collapse: collapse !important; border-radius: 3px; color: #fefefe; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 6px 3px 6px; text-align: left; vertical-align: top; word-wrap: break-word;"><a href="https://example.com" style="Margin: 0; border: 0 solid #2199e8; border-radius: 3px; color: #fefefe; display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; padding: 8px 16px 8px 16px; text-align: left; text-decoration: none;">LEARN MORE</a></td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </center>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <!-- End Column -->
+
+                          <!-- Start Column -->
+                          <td class="small-12 large-4 columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 20px 25px 20px 25px; padding-bottom: 16px; padding-left: 8px; padding-right: 8px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;"
+                            bgcolor="#ffffff">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center data-parsed="" style="min-width: 145.33333px; width: 100%;"><img src="journey-builder.png" alt="" class="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;" height="100px" align="middle"></center>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center; word-wrap: normal;">Journey Builder</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-bottom: 10px; padding-top: 2px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center;">Inspire your<span class="wrap-break"></span> customers at<span class="wrap-break"></span> every turn.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center style="min-width: 145.33333px; width: 100%;">
+                                      <table class="button radius" style="Margin: 0 0 16px 0; border-collapse: collapse; border-spacing: 0; margin: 0 0 16px 0; padding: 0; text-align: left; vertical-align: top; width: auto;">
+                                        <tbody>
+                                          <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                            <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                              <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                                <tbody>
+                                                  <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; background: #2199e8; background-color: #0A5BAC !important; border: none; border-collapse: collapse !important; border-radius: 3px; color: #fefefe; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 6px 3px 6px; text-align: left; vertical-align: top; word-wrap: break-word;"><a href="https://example.com" style="Margin: 0; border: 0 solid #2199e8; border-radius: 3px; color: #fefefe; display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; padding: 8px 16px 8px 16px; text-align: left; text-decoration: none;">LEARN MORE</a></td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </center>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <!-- End Column -->
+
+                          <!-- Start Column -->
+                          <td class="small-12 large-4 columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 20px 25px 20px 25px; padding-bottom: 16px; padding-left: 8px; padding-right: 16px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;"
+                            bgcolor="#ffffff">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center data-parsed="" style="min-width: 145.33333px; width: 100%;"><img src="salesforce-pardot.png" alt="" class="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;" height="100px" align="middle"></center>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-top: 15px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <h4 class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center; word-wrap: normal;">Salesforce Pardot</h4>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; padding-bottom: 10px; padding-top: 2px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <p class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center;">B2B Marketing Automation at<span class="wrap-break"></span> the next level.</p>
+                                  </td>
+                                </tr>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <center style="min-width: 145.33333px; width: 100%;">
+                                      <table class="button radius" style="Margin: 0 0 16px 0; border-collapse: collapse; border-spacing: 0; margin: 0 0 16px 0; padding: 0; text-align: left; vertical-align: top; width: auto;">
+                                        <tbody>
+                                          <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                            <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                              <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                                <tbody>
+                                                  <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; background: #2199e8; background-color: #0A5BAC !important; border: none; border-collapse: collapse !important; border-radius: 3px; color: #fefefe; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 6px 3px 6px; text-align: left; vertical-align: top; word-wrap: break-word;"><a href="https://example.com" style="Margin: 0; border: 0 solid #2199e8; border-radius: 3px; color: #fefefe; display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; padding: 8px 16px 8px 16px; text-align: left; text-decoration: none;">LEARN MORE</a></td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </center>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <!-- End Column -->
+
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Row -->
+
+                    <!-- Spacer White -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Spacer Blue -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#D6E8FC">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- TRAILHEAD -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#D6E8FC">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 12px 15px 3px 40px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <h4 class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: 2px; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left; word-wrap: normal;">TRAILHEAD</h4>
+                          </td>
+                        </tr>
+                        <!-- SKILL UP -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 15px 5px 40px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <h2 class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 700; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: left; word-wrap: normal;">Skill up your email marketing<span class="wrap-break"></span> with training on Trailhead.</h2>
+                          </td>
+                        </tr>
+                        <!-- Learn how.. -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 15px 5px 40px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <p class="text-left" style="Margin: 0; Margin-bottom: 10px; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; line-height: 18px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Learn how to deliver more relevant and personalized email.</p>
+                          </td>
+                        </tr>
+                        <!-- Trial Button -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 12px 20px 5px 40px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <table class="button radius" style="Margin: 0 0 16px 0; border-collapse: collapse; border-spacing: 0; margin: 0 0 16px 0; padding: 0; text-align: left; vertical-align: top; width: auto;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                                    <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top;">
+                                      <tbody>
+                                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; background: #2199e8; background-color: #0A5BAC !important; border: none; border-collapse: collapse !important; border-radius: 3px; color: #fefefe; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 3px 8px 3px 8px; text-align: left; vertical-align: top; word-wrap: break-word;"><a href="https://example.com" style="Margin: 0; border: 0 solid #2199e8; border-radius: 3px; color: #fefefe; display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.3; margin: 0; padding: 8px 16px 8px 16px; text-align: left; text-decoration: none;">START YOUR TRIAL</a></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Spacer Blue -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#D6E8FC">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Spacer White -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Footer Section -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <!-- Salesforce/Slack Logo -->
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <center data-parsed="" style="min-width: 620px; width: 100%;"> <img src="sf-slack-logo.png" alt="" class="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;" height="100px" align="middle"></center>
+                          </td>
+                        </tr>
+                        <!-- Social Icons -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 10px 0px 10px 0px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <center data-parsed="" style="min-width: 620px; width: 100%;">
+                              <table class="menu float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: auto !important;" align="center">
+                                <tbody>
+                                  <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                    <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 10px; padding-right: 10px; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                      <a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="dark-facebook.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 40px; outline: none; text-decoration: none; width: auto;"></a>
+                                    </td>
+                                    <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 10px; padding-right: 10px; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                      <a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="dark-twitter.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 40px; outline: none; text-decoration: none; width: auto;"></a>
+                                    </td>
+                                    <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 10px; padding-right: 10px; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                      <a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="dark-linkedin.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 40px; outline: none; text-decoration: none; width: auto;"></a>
+                                    </td>
+                                    <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 10px; padding-right: 10px; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                      <a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="dark-instagram.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 40px; outline: none; text-decoration: none; width: auto;"></a>
+                                    </td>
+                                    <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 10px; padding-right: 10px; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                      <a href="https://example.com" style="Margin: 0; color: #2199e8; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;"><img src="dark-youtube.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 40px; outline: none; text-decoration: none; width: auto;"></a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </center>
+                          </td>
+                        </tr>
+                        <!-- Phone -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 10px 0px 5px 0px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <p class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center;"><a style="Margin: 0; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 500; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;" href="tel:+1-800-555-5555">1-800-555-5555</a></p>
+                          </td>
+                        </tr>
+                        <!-- Connect -->
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0; padding: 5px 0px 10px 0px; text-align: left; vertical-align: top; word-wrap: break-word;">
+                            <p class="text-center" style="Margin: 0; Margin-bottom: 10px; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; margin-bottom: 10px; padding: 0; text-align: center;"><a style="Margin: 0; color: #2B3F62; font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 500; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;" href="https://example.com">More ways to connect >></a></p>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                    <!-- Spacer White -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#ffffff">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Spacer Gray -->
+                    <table class="spacer float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; width: 100%;" bgcolor="#707070">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+                          <td style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: normal; hyphens: auto; line-height: 15px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word;"
+                            height="15px"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Socket Links -->
+                    <table class="row" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;" bgcolor="#707070">
+                      <tbody>
+                        <tr style="padding: 0; text-align: left; vertical-align: top;">
+
+                          <td class="small-12 large-4 columns first" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; padding-bottom: 16px; padding-left: 16px; padding-right: 8px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                    <a href="https://example.com" style="Margin: 0; color: #ffffff; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;">Privacy Policy</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+
+                          <td class="small-12 large-4 columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; padding-bottom: 16px; padding-left: 8px; padding-right: 8px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                    <a href="https://example.com" style="Margin: 0; color: #ffffff; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;">Manage Preferences</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+
+                          <td class="small-12 large-4 columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; padding-bottom: 16px; padding-left: 8px; padding-right: 16px; text-align: left; vertical-align: top; width: 177.33333px; word-wrap: break-word;">
+                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                              <tbody>
+                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                  <td class="menu-item float-center" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0 auto; border-collapse: collapse !important; color: #0a0a0a; float: none; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: normal; hyphens: auto; line-height: 1.3; margin: 0 auto; padding: 0; text-align: center; vertical-align: top; word-wrap: break-word;">
+                                    <a href="https://example.com" style="Margin: 0; color: #ffffff; font-family: 'Poppins', sans-serif; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left; text-decoration: none;">Unsubscribe</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </table>
+                    <!-- End Row -->
+
+
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Container -->
+
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
